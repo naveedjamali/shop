@@ -9,21 +9,18 @@
       "request": "launch",
       "type": "dart",
       "flutterMode": "release",
-      "flutterPlatform": "default"
     },
     {
       "name": "shop-debug",
       "request": "launch",
       "type": "dart",
       "flutterMode": "debug",
-      "flutterPlatform": "default"
     },
     {
       "name": "shop-profile",
       "request": "launch",
       "type": "dart",
       "flutterMode": "profile",
-      "flutterPlatform": "default"
     }
   ]
 }
