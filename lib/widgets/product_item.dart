@@ -9,6 +9,7 @@ class ProductItem extends StatelessWidget {
   // final String id;
   // final String title;
   // ProductItem({this.id, this.title, this.imageUrl});
+
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context, listen: false);
@@ -45,6 +46,21 @@ class ProductItem extends StatelessWidget {
                 product.price,
                 product.title,
               );
+              //hide the current snackbar (if any)
+              Scaffold.of(context).hideCurrentSnackBar();
+              //create a new snackbar
+              Scaffold.of(context).showSnackBar(SnackBar(
+                content: Text(
+                  'Item added to cart!',
+                ),
+                duration: Duration(seconds: 4),
+                action: SnackBarAction(
+                  label: 'Undo',
+                  onPressed: () {
+                    cart.removeSingleItem(product.id);
+                  },
+                ),
+              ));
             },
             color: Theme.of(context).accentColor,
           ),
